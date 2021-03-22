@@ -1,12 +1,13 @@
 import express from "express";
 import routes from "../routes";
-import {confirm_account, home, join, login} from "../controllers/globalController";
+import {home, login, photos, profile} from "../controllers/globalController";
+import {localsMiddleware} from "../middlewares";
 
 const globalRouter = express.Router();
 
-globalRouter.get(routes.home, home);
-globalRouter.get(routes.join, join);
-globalRouter.get(routes.login, login);
-globalRouter.get(routes.confirm_account, confirm_account);
+globalRouter.get(routes.home, localsMiddleware, home);
+globalRouter.get(routes.login, localsMiddleware, login);
+globalRouter.get(routes.photos, localsMiddleware, photos);
+globalRouter.get(routes.profile, localsMiddleware, profile);
 
 export default globalRouter;

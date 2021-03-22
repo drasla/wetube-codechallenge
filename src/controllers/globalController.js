@@ -1,7 +1,7 @@
-export const home = (req, res) => res.send("Home");
+export const home = (req, res) => res.render("home", {pageTitle: "Home"});
 
-export const join = (req, res) => res.send("Join");
+export const login = (req, res) => res.render("login", {pageTitle: "Login"});
 
-export const login = (req, res) => res.send("Login");
+export const photos = (req, res) => res.render("photos", {pageTitle: "photos"});
 
-export const confirm_account = (req, res) => res.send("Confirm Account");
+export const profile = (req, res) => res.render("profile", {pageTitle: "profile"});
