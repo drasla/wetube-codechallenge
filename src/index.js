@@ -1,14 +1,14 @@
 import express from "express";
 import path from "path";
-import routes from "./routes";
-import globalRouter from "./routes/globalRouter";
+import movieRouter from "./movieRouter";
+import {localsMiddleware} from "./middlewares";
 
 const app = express();
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
+app.use(localsMiddleware);
 
-// Add your magic here!
-app.use(routes.home, globalRouter);
+app.use("/", movieRouter);
 
 // Codesanbox does not need PORT :)
 const PORT = 4000;
