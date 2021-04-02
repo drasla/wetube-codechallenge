@@ -1,4 +1,5 @@
 import "./db";
+import "./models/Movie";
 import express from "express";
 import path from "path";
 import bodyParser from "body-parser";
