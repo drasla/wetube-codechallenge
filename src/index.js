@@ -1,17 +1,20 @@
-import "./db";
-import "./models/Movie";
 import express from "express";
-import path from "path";
-import bodyParser from "body-parser";
-import movieRouter from "./movieRouter";
-import { localsMiddleware } from "./middlewares";
 
 const app = express();
-app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "views"));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(localsMiddleware);
-app.use("/", movieRouter);
+
+const globalRouter = express.Router();
+
+const home = (req, res) => res.send("Home");
+const about = (req, res) => res.send("About");
+const contact = (req, res) => res.send("Contact");
+const login = (req, res) => res.send("Login");
+
+globalRouter.get("/", home);
+globalRouter.get("/about", about);
+globalRouter.get("/contact", contact);
+globalRouter.get("/login", login);
+
+app.use("/", globalRouter);
 
 // Codesanbox does not need PORT :)
-app.listen(4000,() => console.log(`✅  Server Ready!`));
+app.listen(() => console.log(`Listening!`));

@@ -1,13 +1,13 @@
 const HOME = "/";
+const ABOUT = "/about";
+const CONTACT = "/contact";
 const LOGIN = "/login";
-const PHOTOS = "/photos";
-const PROFILE = "/profile";
 
 const routes = {
     home: HOME,
-    login: LOGIN,
-    photos: PHOTOS,
-    profile: PROFILE
-}
+    about: ABOUT,
+    contact: CONTACT,
+    login: LOGIN
+};
 
 export default routes;
