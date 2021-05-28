@@ -7,7 +7,7 @@ import {
     movieDetail, postCreate,
     postEditPage,
     search
-} from "./movieController";
+} from "./controllers/globalController";
 
 const movieRouter = express.Router();
 
