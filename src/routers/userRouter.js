@@ -1,11 +1,10 @@
 import express from "express";
-import routes from "../routes";
-import {editProfile, userDetail, userHome} from "../controllers/userController";
+import {editProfile, seeUser, seeUsers} from "../controllers/userController";
 
 const userRouter = express.Router();
 
-userRouter.get(routes.users, userHome);
-userRouter.get(routes.userDetail(), userDetail);
-userRouter.get(routes.editProfile, editProfile);
+userRouter.get("/", seeUsers);
+userRouter.get("/:id", seeUser);
+userRouter.get("/edit-profile", editProfile);
 
 export default userRouter;

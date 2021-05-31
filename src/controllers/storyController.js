@@ -1,15 +1,23 @@
-export const storyHome = (req, res) => {
-    res.send("Story Home");
+export const home = (req, res) => {
+    res.render("home", {pageTitle: "Home"});
 };
 
-export const storyDetail = (req, res) => {
-    res.send("Story Page");
+export const trending = (req, res) => {
+    res.render("trending", {pageTitle: "Trending"});
 };
 
-export const storyEdit = (req, res) => {
-    res.send("Edit Story");
+export const newStories = (req, res) => {
+    res.render("newStories", {pageTitle: "New Stories"});
 };
 
-export const storyDelete = (req, res) => {
-    res.send("Delete Story");
+export const seeStory = (req, res) => {
+    res.render("seeStory", {pageTitle: "See Story"});
+};
+
+export const editStory = (req, res) => {
+    res.render("editStory", {pageTitle: "Edit Story"});
+};
+
+export const deleteStory = (req, res) => {
+    res.render("deleteStory", {pageTitle: "Delete Story"});
 }

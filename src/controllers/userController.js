@@ -1,11 +1,19 @@
-export const userHome = (req, res) => {
-    res.send("User Home");
+export const join = (req, res) => {
+    res.render("join", {pageTitle: "Join"});
 };
 
-export const userDetail = (req, res) => {
-    res.send("User Page");
+export const login = (req, res) => {
+    res.render("login", {pageTitle: "Login"});
+};
+
+export const seeUsers = (req, res) => {
+    res.render("seeUsers", {pageTitle: "See Users"});
+};
+
+export const seeUser = (req, res) => {
+    res.render("seeUser", {pageTitle: "See User"});
 };
 
 export const editProfile = (req, res) => {
-    res.send("Edit Profile");
-};
+    res.render("editProfile", {pageTitle: "Edit Profile"});
+}
