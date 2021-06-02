@@ -1,0 +1,6 @@
+extends layouts/main
+include mixins/movie
+
+block content
+    each item in movies
+        +movieMixin(item)

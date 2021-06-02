@@ -1,4 +1,4 @@
 mixin movieMixin(movie = {})
     div
-        a(href=`/${movie._id}`)
+        a(href=`/${movie.id}`)
             h3 #{movie.title} (#{movie.year}) - #{movie.rating}

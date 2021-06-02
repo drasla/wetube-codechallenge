@@ -1,2 +1,6 @@
 header
     h1  #{pageTitle}
+    form(method="get", action="/filter")
+        input(type="number", name="year", placeholder="Filter by year")
+        input(type="number", name="rating", placeholder="Filter by rating")
+        button(type="submit",)  Search

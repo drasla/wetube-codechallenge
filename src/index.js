@@ -5,6 +5,7 @@ import userRouter from "./routers/userRouter";
 import globalRouter from "./routers/globalRouter";
 import storyRouter from "./routers/storyRouter";
 import {localsMiddleware} from "./middlewares";
+import movieRouter from "./movieRouter";
 
 const app = express();
 
@@ -19,9 +20,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(localsMiddleware);
 
-app.use("/", globalRouter);
-app.use("/users", userRouter);
-app.use("/stories", storyRouter);
+//app.use("/", globalRouter);
+//app.use("/users", userRouter);
+//app.use("/stories", storyRouter);
+
+app.use("/", movieRouter);
 
 // Codesanbox does not need PORT :)
-app.listen(4000,() => console.log(`Listening!`));
+app.listen(4500,() => console.log(`Listening!`));
