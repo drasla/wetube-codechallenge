@@ -5,7 +5,7 @@ import userRouter from "./routers/userRouter";
 import globalRouter from "./routers/globalRouter";
 import storyRouter from "./routers/storyRouter";
 import {localsMiddleware} from "./middlewares";
-import movieRouter from "./movieRouter";
+import movieRouter from "./routers/movieRouter";
 
 const app = express();
 

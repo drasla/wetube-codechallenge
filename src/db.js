@@ -33,6 +33,27 @@ export const getMovieById = (id) => {
     return movies.find((m) => m.id === parseInt(id, 10));
 };
 
+/*
+This adds a movie to the DB.
+Only ONE required argument, it should be an object containing
+  title: string;
+  synopsis: string;
+  genres: Array of strings;
+*/
+
+export const addMovie = ({ title, synopsis, genres }) => {
+    if (typeof title !== "string" || typeof synopsis !== "string") {
+        throw Error("❌  title and synopsis should be strings  ❌");
+    }
+    if (!genres instanceof Array) {
+        throw Error("❌  genres should be an array  ❌");
+    }
+    const id = Math.floor(Math.random() * (title.length + Date.now()));
+    movies = [{ id, title, synopsis, genres }, ...movies];
+};
+
+
+
 // This gives you an array of movies with a release date of minimum X
 export const getMovieByMinimumYear = (year) => {
     if (!year) {

@@ -1,9 +1,4 @@
-import {
-    getMovieById,
-    getMovies,
-    getMovieByMinimumRating,
-    getMovieByMinimumYear
-} from "./db";
+import {addMovie, getMovieById, getMovieByMinimumRating, getMovieByMinimumYear, getMovies} from "../db";
 
 export const home = (req, res) => {
     res.render("index", { movies: getMovies(), pageTitle: "Movies! Home" });
@@ -33,4 +28,21 @@ export const filterMovie = async (req, res) => {
     } else {
         res.render("404", { pageTitle: "Movie not found" });
     }
+};
+
+
+export const getAddMovie = (req, res) => {
+    res.render("add", {pageTitle: "Add Movie"});
+};
+
+export const postAddMovie = (req, res) => {
+    const {
+        body: {title, synopsis, genres: tempGenres}
+    } = req;
+
+    const genres = tempGenres.split(",");
+
+    addMovie({title, synopsis, genres});
+
+    res.redirect("/");
 };
