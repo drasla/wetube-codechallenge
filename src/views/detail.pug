@@ -1,11 +1,11 @@
 extends layouts/main
 
 block content
-    h1=movie.title
-    p=movie.synopsis
+    h1  #{movie.title} (#{movie.year})
+    p=movie.summary
     if movie.genres
         ul
             each genre in movie.genres
                 li=genre
-    //a(href=`/${movie.id}/edit`) Edit
+    a(href=`/${movie.id}/edit`, style=`margin-right: 20px`) Edit
     a(href="/") Back

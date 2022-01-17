@@ -1,11 +1,13 @@
 import express from "express";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
-import userRouter from "./routers/userRouter";
-import globalRouter from "./routers/globalRouter";
-import storyRouter from "./routers/storyRouter";
+//import userRouter from "./routers/userRouter";
+//import globalRouter from "./routers/globalRouter";
+//import storyRouter from "./routers/storyRouter";
 import {localsMiddleware} from "./middlewares";
 import movieRouter from "./routers/movieRouter";
+import "./db";
+import "./models/Movie";
 
 const app = express();
 

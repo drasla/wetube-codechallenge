@@ -20,7 +20,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "helmet": "^4.6.0",
-    "mongoose": "^5.12.3",
+    "mongoose": "^6.1.6",
     "pug": "^3.0.2"
   },
   "devDependencies": {

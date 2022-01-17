@@ -1,4 +1,6 @@
 extends layouts/main
+include mixins/movie
 
 block content
-    h4  #{pageTitle}
+    each item in movies
+        +movieMixin(item)

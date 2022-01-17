@@ -1,13 +1,24 @@
 import express from "express";
-import {home, movieDetail, filterMovie} from "../controllers/movieController";
-import {getAddMovie, postAddMovie} from "../controllers/movieController";
+import {
+    getDeletePage,
+    getEditPage, getUpload,
+    home,
+    movieDetail,
+    postEditPage, postUpload,
+    search
+} from "../controllers/movieController";
 
 const movieRouter = express.Router();
 
-movieRouter.get("/add", getAddMovie);
-movieRouter.post("/add", postAddMovie)
-movieRouter.get("/filter", filterMovie);
-movieRouter.get("/:id", movieDetail);
+// Add your magic here!
 movieRouter.get("/", home);
+movieRouter.get("/upload", getUpload);
+movieRouter.post("/upload", postUpload);
+movieRouter.get("/search", search);
+movieRouter.get("/:id", movieDetail);
+movieRouter.get("/:id/edit", getEditPage);
+movieRouter.post("/:id/edit", postEditPage);
+movieRouter.get("/:id/delete", getDeletePage);
+
 
 export default movieRouter;
