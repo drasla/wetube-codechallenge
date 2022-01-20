@@ -1,6 +1,6 @@
 import express from "express";
 import {getJoin, getLogin, postJoin, postLogin, userHome} from "../controllers/userController";
-import {localsMiddleware, protectorMiddleware} from "../middlewares";
+import {protectorMiddleware} from "../middlewares";
 
 const userRouter = express.Router();
 

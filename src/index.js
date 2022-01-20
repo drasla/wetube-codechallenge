@@ -8,7 +8,7 @@ import cookieParser from "cookie-parser";
 import {localsMiddleware} from "./middlewares";
 //import movieRouter from "./routers/movieRouter";
 import "./db";
-import "./models/Movie";
+//import "./models/Movie";
 import userRouter from "./routers/userRouter";
 
 const app = express();
