@@ -1,10 +1,15 @@
 import express from "express";
-import {editProfile, seeUser, seeUsers} from "../controllers/userController";
+import {getJoin, getLogin, postJoin, postLogin, userHome} from "../controllers/userController";
+import {localsMiddleware, protectorMiddleware} from "../middlewares";
 
 const userRouter = express.Router();
 
-userRouter.get("/", seeUsers);
-userRouter.get("/:id", seeUser);
-userRouter.get("/edit-profile", editProfile);
+userRouter.get("/", protectorMiddleware, userHome);
+userRouter.get("/join", getJoin);
+userRouter.post("/join", postJoin);
+userRouter.get("/login", getLogin);
+userRouter.post("/login", postLogin);
+// userRouter.get("/:id", seeUser);
+// userRouter.get("/edit-profile", editProfile);
 
 export default userRouter;

@@ -1,6 +1,6 @@
 extends layouts/main
-include mixins/movie
 
 block content
-    each item in movies
-        +movieMixin(item)
+    div.profile_data
+        h3 Name : [ #{user.name} ]
+        h3 Username : [ #{user.username} ]

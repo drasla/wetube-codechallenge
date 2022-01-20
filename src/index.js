@@ -1,13 +1,15 @@
 import express from "express";
+import session from "express-session";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 //import userRouter from "./routers/userRouter";
 //import globalRouter from "./routers/globalRouter";
 //import storyRouter from "./routers/storyRouter";
 import {localsMiddleware} from "./middlewares";
-import movieRouter from "./routers/movieRouter";
+//import movieRouter from "./routers/movieRouter";
 import "./db";
 import "./models/Movie";
+import userRouter from "./routers/userRouter";
 
 const app = express();
 
@@ -18,7 +20,13 @@ app.use(helmet());
 app.use("/static", express.static("static"));
 app.use(cookieParser());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
+app.use(
+    session({
+        secret: "Hello!",
+        resave: true,
+        saveUninitialized: true
+    }));
 
 app.use(localsMiddleware);
 
@@ -26,7 +34,7 @@ app.use(localsMiddleware);
 //app.use("/users", userRouter);
 //app.use("/stories", storyRouter);
 
-app.use("/", movieRouter);
+app.use("/", userRouter);
 
 // Codesanbox does not need PORT :)
-app.listen(4500,() => console.log(`Listening!`));
+app.listen(4500, () => console.log(`Listening!`));
