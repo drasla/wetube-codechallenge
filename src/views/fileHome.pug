@@ -1,0 +1,11 @@
+extends layouts/main
+
+block content
+    div.fileInput
+        form(method="post", action="/read", enctype="multipart/form-data")
+            input(type="file", name="textFile")
+            button(type="submit",)  Apply
+    ul.fileList
+        each file in files
+            li
+                a(href="/read/" + file)=file
